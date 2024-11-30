@@ -4,12 +4,15 @@
 -export([count/3, counter/2, incr/3, delete/2, save_record/2]).
 -export([push/2, pop/2, dump/1, execute/2, execute/3, transaction/2, create_table/3, table_exists/2]).
 -export([get_migrations_table/1, migration_done/3]).
--compile(export_all).
+
+-export([column_type_to_sql/1, option_to_sql/1, column_options_to_sql/1, id_value_to_string/1, sort_order_sql/1, pack_value/1, pack_datetime/1]).
+
+
 %-type date_time() ::{{1970..3000,calendar:month(),calne},{pos_integer(),pos_integer(),pos_integer()|float()}}.
 -type date_time() :: calendar:datetime1970().
 -type sql_param_value() :: string()|number()|binary()|boolean().
 -export_type([sql_param_value/0]).
--compile(export_all).
+
 start(_) ->
     ok.
 

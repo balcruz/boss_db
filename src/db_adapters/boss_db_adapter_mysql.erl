@@ -4,7 +4,17 @@
 -export([count/3, counter/2, incr/3, delete/2, save_record/2]).
 -export([push/2, pop/2, dump/1, execute/2, execute/3, transaction/2]).
 -export([get_migrations_table/1, migration_done/3]).
+-export([pack_value/1]).
+
+
+-ifdef(TEST).
 -compile(export_all).
+-endif.
+
+-export([
+         table_exists/2
+        ]).
+
 start(_) ->
     ok.
 

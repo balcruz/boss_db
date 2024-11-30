@@ -1,11 +1,10 @@
 -module(boss_compiler).
 -export([compile/1, compile/2, parse/3]).
 
--compile(export_all).
-
 -ifdef(TEST).
 -compile(export_all).
 -endif.
+
 -type syntaxTree()   :: erl_syntax:syntaxTree().
 -type opt(X)         :: X|undefined.
 -type error(X)       :: {ok, X}|{error, string()}.

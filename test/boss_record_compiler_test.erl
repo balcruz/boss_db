@@ -17,10 +17,10 @@ prop_duplicated_forms() ->
                 {TokenInfo, Attributes,Counters} = {[], [], [c]},
                 ModuleName = 'test',
                 case boss_record_compiler:make_generated_forms(ModuleName,Parameters, TokenInfo, Attributes,Counters) of
-                    {ok, GF} ->
+                    {ok, _GF} ->
                         not(boss_record_compiler:has_duplicates(Parameters));
                     {error, _} ->
-                        DupFields = Parameters -- sets:to_list(sets:from_list(Parameters)),
+                        _DupFields = Parameters -- sets:to_list(sets:from_list(Parameters)),
                         boss_record_compiler:has_duplicates(Parameters)
                 end
             end).

@@ -1,4 +1,3 @@
 -include_lib("proper/include/proper.hrl").
 -include_lib("eunit/include/eunit.hrl").
--import(prop_runner,[gen/2, gen/4]).
--compile(export_all).
+-import(prop_runner,[gen/4]).

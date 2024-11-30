@@ -21,8 +21,6 @@
                      clause_body/1,
                      clause_guard/1,
                      match_expr/2,
-                     function_clauses/1,
-                     get_pos/1,
                      add_ann/2,
                      get_ann/1]).
 
