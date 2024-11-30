@@ -6,6 +6,8 @@
 -export([execute/2, transaction/2]).
 -export([push/2, pop/2, dump/1]).
 -export([table_exists/2, get_migrations_table/1, migration_done/3]).
+-export([make_curser/1]).
+
 
 -define(LOG(Name, Value), lager:debug("DEBUG: ~s: ~p~n", [Name, Value])).
 -type maybe(X)   :: X|undefined.
@@ -13,7 +15,7 @@
 
 % Number of seconds between beginning of gregorian calendar and 1970
 -define(GREGORIAN_SECONDS_1970, 62167219200).
--compile(export_all).
+
 -ifdef(TEST).
 -compile(export_all).
 -endif.

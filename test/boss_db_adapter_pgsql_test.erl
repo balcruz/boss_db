@@ -1,7 +1,6 @@
 -module(boss_db_adapter_pgsql_test).
 -include_lib("proper/include/proper.hrl").
 -include_lib("eunit/include/eunit.hrl").
--compile(export_all).
 %% build_insert_sql_test() ->
 %%     ?assert(proper:check_spec({boss_db_adapter_pgsql,build_insert_sql, 4},
 %% 			     [{to_file, user}])),
@@ -57,15 +56,15 @@ prop_pack_date_tuple() ->
                     )).
 
 prop_pack_datetime_tuple() ->
-    ?FORALL(DateTime = {Date ,Time},
+    ?FORALL(DateTime = {Date, _Time},
             {{year(), month(), day()},{hour(), minute(),second()}},
             ?IMPLIES((calendar:valid_date(Date)),
                      date_format( DateTime)
                     )).
 
-equal(A,A) ->
+equal(A,A) when A == A ->
     true;
-equal(A,B) ->
+equal(A,B) when A =/= B ->
     false.
 all_true(L) ->
     lists:all(fun(X) ->

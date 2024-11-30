@@ -3,10 +3,11 @@
 -author('zkessin@gmail.com').
 -define(DATABASE_MODULE, boss_db).
 -define(PREFIX, "BOSSRECORDINTERNAL").
+
 -ifdef(TEST).
 -compile(export_all).
 -endif.
--compile(export_all).
+
 -type limit()      :: pos_integer() | 'all' | 'many'.
 -type error(T)     :: {ok, T} | {error, string()}.
 -type syntaxTree() :: erl_syntax:syntaxTree() | any().

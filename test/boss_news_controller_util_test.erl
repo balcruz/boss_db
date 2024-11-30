@@ -1,7 +1,6 @@
 -module(boss_news_controller_util_test).
 -include_lib("proper/include/proper.hrl").
 -include_lib("eunit/include/eunit.hrl").
--compile(export_all).
 -include("../src/boss_news.hrl").
 
 'prop_process dict single entry'() ->
@@ -50,7 +49,7 @@ prop_all() ->
             {[nonempty_string()|[nonempty_string()]], nonempty_string(), [{nonempty_string(), [nonempty_string()]}]},
             begin
                 Dict1   = dict:from_list(Dict0),
-                WatchP  = random:uniform(length(WatchList)),
+                WatchP  = rand:uniform(length(WatchList)),
                 WatchId = lists:nth(WatchP, WatchList),
 
                 Dict2   = dict:store(TopicString, WatchList, Dict1),
