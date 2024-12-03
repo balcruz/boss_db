@@ -7,10 +7,10 @@ case erlang:function_exported(rebar3, main, 1) of
         [{deps, [
             {lager,         ".*",   {git, "https://github.com/erlang-lager/lager.git",                {tag, "3.9.2"}}},
             {pmod_transform, {git, "git@github.com:richcarl/pmod_transform.git",                      {tag, "master"}}},
-            {erlando,       ".*",   {git, "https://github.com/balcruz/erlando.git",                   {tag, "master"}}},
+            {erlando,       ".*",   {git, "https://github.com/balcruz/erlando.git",                   {tag, "0.0.1"}}},
             {aleppo,        ".*",   {git, "https://github.com/ErlyORM/aleppo.git",                    {tag, "v0.9.5"}}},
             {medici,        ".*",   {git, "https://github.com/ErlyORM/medici.git",                    {tag, "bb6167459d"}}},
-            {pbkdf2,        ".",    {git, "git@github.com:balcruz/erlang-pbkdf2.git",                 {tag, "2.0.1"}}},
+            {pbkdf2,        ".",    {git, "git@github.com:balcruz/erlang-pbkdf2.git",                 {tag, "2.0.2"}}},
 
             % Different version of mongodb driver and bson breaking compilation
             % on different Erlang version. So disabling them by default. Uncomment one
